@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<configuration>
+  
+  <!-- for entring multi directory, should entered with comma seperated -->
+  <property>
+    <name>dt.operator.fileReader01.prop.multiDirectory</name>
+    <value>/tmp/lakshmi/testdata/output-dir01/</value>
+  </property>
+  
+  <!-- filereader01 -->
+  <property>
+    <name>dt.operator.fileReader01.prop.directory</name>
+    <value>/tmp/lakshmi/testdata/output-dir01/</value>
+  </property>
+  
+  <!-- filereader02 -->
+  <property>
+    <name>dt.operator.fileReader02.prop.directory</name>
+    <value>/tmp/lakshmi/testdata/output-dir02/</value>
+  </property>
+  
+  <!-- filereader03 -->
+  <property>
+    <name>dt.operator.fileReader03.prop.directory</name>
+    <value>/tmp/lakshmi/testdata/output-dir03/</value>
+  </property>
+  
+  <!-- filereader04 -->
+  <property>
+    <name>dt.operator.fileReader04.prop.directory</name>
+    <value>/tmp/lakshmi/testdata/output-dir04/</value>
+  </property>
+  
+  <!-- filereader05 -->
+  <property>
+    <name>dt.operator.fileReader05.prop.directory</name>
+    <value>/tmp/lakshmi/testdata/output-dir05/</value>
+  </property>
+  
+  <!-- filereader06 -->
+  <property>
+    <name>dt.operator.fileReader06.prop.directory</name>
+    <value>/tmp/lakshmi/testdata/output-dir06/</value>
+  </property>
+
+  <!-- filereader07 -->
+  <property>
+    <name>dt.operator.fileReader07.prop.directory</name>
+    <value>/tmp/lakshmi/testdata/output-dir07/</value>
+  </property>
+  
+  <!-- filereader08 -->
+  <property>
+    <name>dt.operator.fileReader08.prop.directory</name>
+    <value>/tmp/lakshmi/testdata/output-dir08/</value>
+  </property>
+  
+</configuration>
+
