@@ -1,12 +1,6 @@
 <?xml version="1.0"?>
 <configuration>
   
-  <!-- for entring multi directory, should entered with comma seperated -->
-  <property>
-    <name>dt.operator.fileReader01.prop.multiDirectory</name>
-    <value>/tmp/lakshmi/testdata/output-dir01/</value>
-  </property>
-  
   <!-- filereader01 -->
   <property>
     <name>dt.operator.fileReader01.prop.directory</name>

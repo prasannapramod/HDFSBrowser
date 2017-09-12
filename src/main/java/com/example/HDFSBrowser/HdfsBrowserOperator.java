@@ -17,36 +17,24 @@ import org.apache.hadoop.fs.Path;
 public class HdfsBrowserOperator extends SnapShotHDFSBrowser
 {
   private static final Logger logger = LoggerFactory.getLogger(SnapShotHDFSBrowser.class);
-  
+
   @Override
-  protected String getDeviceFileName(String deviceKey)
+  protected FileStatus[] getDeviceFiles(String deviceKey) throws IOException
   {
-    FileStatus[] fileStatus = null;
-    String fileName = null;
+    FileStatus[] fileStatus = fs.listStatus(new Path(directory));
 
-    try {
-      fileStatus = fs.listStatus(new Path(directory));
-      
-      if (fileStatus.length != 0) {
-        Arrays.sort(fileStatus, new Comparator<FileStatus>()
-        {
-          @Override
-          public int compare(FileStatus o1, FileStatus o2)
-          {
-            return Long.compare(o1.getModificationTime(), o2.getModificationTime());
-          }
-        });
-
-        fileName = fileStatus[fileStatus.length - 1].getPath().getName();
-        logger.info("FileName is {}", fileName);
-        
-      } else {
-        fileName = null;
-        logger.info("No File present");
+    Arrays.sort(fileStatus, new Comparator<FileStatus>()
+    {
+      @Override
+      public int compare(FileStatus o1, FileStatus o2)
+      {
+        return Long.compare(o2.getModificationTime(), o1.getModificationTime());
       }
-    } catch (IOException e) {
-      e.printStackTrace();
+    });
+    
+    for (FileStatus fs : fileStatus) {
+      logger.info("Path {}", fs.getPath().toString());
     }
-    return fileName;
+    return fileStatus;
   }
 }

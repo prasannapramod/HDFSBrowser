@@ -1,14 +1,14 @@
 package com.example.HDFSBrowser;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Collection;
 
 /**
  * Created by lakshmi on 8/4/17.
  */
 public class FileContent
 {
-  List<String> lines = new ArrayList<>();
+  Collection<String> data;
   long modificationTime;
   long filesize = 0;
+  long timelastread;
 }
