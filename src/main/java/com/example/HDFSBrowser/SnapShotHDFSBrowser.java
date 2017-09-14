@@ -118,7 +118,7 @@ public abstract class SnapShotHDFSBrowser extends AppDataSnapshotServerMap imple
     FileContent fileContent = fileContents.get(filePath.toString());
     if (fileContent.modificationTime > 0) {
       logger.info("wait 2 seconds");
-      if ((System.currentTimeMillis() - fileContent.timelastread) >= 2000){
+      if ((System.currentTimeMillis() - fileContent.timelastread) >= 2000) {
         logger.info("its been 2 seconds since last read");
         try (FSDataInputStream in = fs.open(filePath)) {
           in.seek(fileContent.filesize);
@@ -221,7 +221,9 @@ public abstract class SnapShotHDFSBrowser extends AppDataSnapshotServerMap imple
             map.put("line", line);
             GPOMutable gpoRow = operator.convert(map);
             listLines.add(0, gpoRow);
-            if (i >= count) break fileLoop;
+            if (i >= count){
+              break fileLoop;
+            }
           }
         }
       } catch (IOException | ExecutionException e) {
